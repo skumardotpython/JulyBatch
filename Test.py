@@ -1,40 +1,36 @@
-class Calculaltor:
+#
+# class Calculator:
+#
+#     def Add(self, a, b):
+#         print("Add is : ",  a + b)
+#
+# calc2 = Calculator()
+# calc = Calculator()
+# calc.Add(10, 20)
+# calc.Add('Welcome ', 'Python')
+# calc.Add(10.23, 11.26)
+# # calc.Add(calc, calc2)
 
-    globalVaribale = 100
+x = 10 + 10
+
+class vector:
 
     def __init__(self, a, b):
-        self.a = a   # Class Variable or Instance Variable
+        self.a = a
         self.b = b
-        result = a + b # Local Variable (The scope of the variable is limited within the function)
+
+    def __str__(self):
+        return '%d, %d' % (self.a, self.b)
+
+    def __add__(self, other):
+        return  vector(self.a + other.a, self.b + other.b)
 
 
-    def Add(self):
-        c = self.a + self.b
-        print('The sum is :', c)
 
+v1 = vector(10, 20)
+v2 = vector(30, 40)
 
-    def Sub(self):
-        c = self.a - self.b
-        print('The Sub is :', c)
-
-    def Mul(self):
-        c = self.a * self.b
-        print('The Mul is :', c)
-
-    def Div(self):
-        c = self.a / self.b
-        print('The Div is :', c)
-
-
-calc = Calculaltor(20,10)
-
-calc.Add()
-calc.Sub()
-calc.Mul()
-calc.Div()
-calc.Add()
-
-print('*' * 100)
-
-cal = Calculaltor(30,10)
-cal.Add()
+v3 = v1 + v2
+print(v3.a)
+print(v3.b)
+print(v3)
